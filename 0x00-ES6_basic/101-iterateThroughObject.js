@@ -1,12 +1,9 @@
 export default function iterateThroughObject(reportWithIterator) {
-  const employeeList = [...Object.values(reportWithIterator)];
-  const str = '';
+  const employeeList = [...Object.values(reportWithIterator[0])];
+  const arr = [];
 
   for (const employee of employeeList) {
-    str.push(employee);
-    if (employee !== employeeList[employeeList.length - 1]) {
-      str.push('|');
-    }
+    arr.push(employee);
   }
-  return str;
+  return arr.toString().replace(/,/gi, ' | ');
 }
