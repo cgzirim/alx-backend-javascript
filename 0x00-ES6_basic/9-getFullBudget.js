@@ -4,11 +4,11 @@ export default function getFullBudgetObject(income, gdp, capita) {
   const budget = getBudgetObject(income, gdp, capita);
   const fullBudget = {
     ...budget,
-    getIncomeInDollars() {
-      return `$${income}`;
+    getIncomeInDollars(int) {
+      return `$${int}`;
     },
-    getIncomeInEuros() {
-      return `${income} euros`;
+    getIncomeInEuros(int) {
+      return `${int} euros`;
     },
   };
 
