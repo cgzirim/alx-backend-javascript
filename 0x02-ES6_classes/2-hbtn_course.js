@@ -26,7 +26,7 @@ export default class HolbertonCourse {
     if (typeof value !== 'number') {
       throw new TypeError('Name must be a number');
     }
-    this._name = value;
+    this._length = value;
   }
 
   // Get, Set students
