@@ -5,7 +5,7 @@ export default function handleProfileSignup() {
   let lastName;
   let body;
 
-  Promise.all([uploadPhoto(), createUser()]).then((data) => {
+  return Promise.all([uploadPhoto(), createUser()]).then((data) => {
     body = data[0].body;
     firstName = data[1].firstName;
     lastName = data[1].lastName;
