@@ -85,3 +85,15 @@ function createEmployee(salary: number | string) {
     if (salary <  500) return new Teacher;
     return new Director;
 }
+
+// Task 6
+type isDirector = (employee: object) => true;
+
+function executeWork(employee: object) {
+    if (employee instanceof Director) {
+        employee.workDirectorTasks();
+    }
+    if (employee instanceof Teacher) {
+        employee.workTeacherTasks();
+    }
+}
