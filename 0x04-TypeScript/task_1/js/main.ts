@@ -97,3 +97,11 @@ function executeWork(employee: object) {
         employee.workTeacherTasks();
     }
 }
+
+// Task 7
+type Subject = 'Math' | 'History';
+
+function teachClass(todayClass: string) {
+    if (todayClass === 'Math') return 'Teaching Math';
+    if (todayClass === 'History') return 'Teaching History'
+}
