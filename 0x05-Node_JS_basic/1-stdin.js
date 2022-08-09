@@ -1,11 +1,11 @@
-console.log('Welcome to Holberton School, what is you name?');
+process.stdout.write('Welcome to Holberton School, what is you name?\n');
 
 process.stdin.on('data', data => {
   if (data !== null) {
-    console.log(`Your name is: ${data.toString()}`);
+    process.stdout.write(`Your name is: ${data.toString()}\n`);
   }
 });
 
 process.stdin.on('end', () => {
-  console.log('This important software is now closing');
+    process.stdout.write('This important software is now closing\n');
 });
