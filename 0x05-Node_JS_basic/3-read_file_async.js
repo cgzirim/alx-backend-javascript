@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (error, data) => {
       if (error) {
@@ -19,21 +19,21 @@ function countStudents (path) {
 
       const fields = {};
       for (const student of students) {
-        const st_data = student.split(',');
+        const stData = student.split(',');
 
-        const st_first_name = st_data[0];
-        const st_field = st_data[st_data.length - 1];
+        const stFirstName = stData[0];
+        const stField = stData[stData.length - 1];
 
-        if (fields[st_field]) {
-          fields[st_field][0] += 1;
-          fields[st_field].push(st_first_name);
+        if (fields[stField]) {
+          fields[stField][0] += 1;
+          fields[stField].push(stFirstName);
         } else {
-          fields[st_field] = [1, st_first_name];
+          fields[stField] = [1, stFirstName];
         }
       }
       for (const [k, v] of Object.entries(fields)) {
-        const first_names = v.slice(1).join(', ');
-        message = `Number of students in ${k}: ${v[0]}. List: ${first_names}`;
+        const firstName = v.slice(1).join(', ');
+        message = `Number of students in ${k}: ${v[0]}. List: ${firstName}`;
         console.log(message);
         response.push(message);
       }
