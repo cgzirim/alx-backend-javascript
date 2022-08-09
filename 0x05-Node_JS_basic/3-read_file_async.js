@@ -1,6 +1,4 @@
 const fs = require('fs');
-const util = require('util');
-const readFile = util.promisify(fs.readFile);
 
 function countStudents (path) {
   return new Promise((resolve, reject) => {
