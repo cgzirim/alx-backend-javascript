@@ -14,7 +14,7 @@ class StudentsController {
           message = `Number of students in ${k}: ${v[0]}. List: ${firstName}`;
           responseMsg.push(message);
         }
-        response.send(200, `${responseMsg.join('\n')}`);
+        response.send(200, `${responseMsg.join('\n')}\n`);
       })
       .catch((error) => {
         response.send(500, `${error.message}`);
