@@ -23,15 +23,16 @@ class StudentsController {
 
   static getAllStudentsByMajor (request, response, DATABASE) {
     const { major } = request.params;
-    if (major !== 'CS' || major !== 'SW') {
+    if (major !== 'CS' && major !== 'SWE') {
       response.send(500, 'Major parameter must be CS or SWE');
     }
     readDatabase(DATABASE)
       .then((field) => {
-        response.send(200, `List: ${field.major.join(', ')}`);
+        
+        response.send(200, `List: ${field[major].slice(1).join(', ')}`);
       })
       .catch((error) => { response.send(500, `${error.message}`); });
   }
 }
 
-export default StudentsController;
+module.exports = StudentsController;

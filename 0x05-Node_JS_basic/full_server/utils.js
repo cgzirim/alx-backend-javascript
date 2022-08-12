@@ -19,9 +19,10 @@ function readDatabase (path) {
         const stField = stData[stData.length - 1];
 
         if (fields[stField]) {
+          fields[stField][0] += 1;
           fields[stField].push(stFirstName);
         } else {
-          fields[stField] = [stFirstName];
+          fields[stField] = [1, stFirstName];
         }
       }
       resolve(fields);
@@ -29,4 +30,4 @@ function readDatabase (path) {
   });
 }
 
-export default readDatabase;
+module.exports = readDatabase;
