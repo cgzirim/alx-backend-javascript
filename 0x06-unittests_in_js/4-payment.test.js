@@ -1,11 +1,11 @@
 const { expect } = require("chai");
 const sinon = require("sinon");
 const Utils = require('./utils')
-const sendPaymentRequestToApi = require('./3-payment')
+const sendPaymentRequestToApi = require('./4-payment')
 
 describe('Test sendPaymentRequestToApi with stub', function() {
     it('should ensure math is the same', function() {
-        const stubUtils = sinon.spy(Utils, 'calculateNumber');
+        const stubUtils = sinon.stub(Utils, 'calculateNumber');
         stubUtils.returns(10);
         const spyConsole = sinon.spy(console, 'log');
 
